@@ -18,13 +18,14 @@ const startPoint = {  // 初始话起始点
 // 计算起始点 防止生成在角落
 function calculatePoint() {
   startX = Math.random() < 0.5 ? Math.random() < 0.5 ? 0 : WIDTH : WIDTH * Math.random()
-  startY = startX === 0 ? HEIGHT * Math.random() : Math.random() < 0.5 ? 0 : HEIGHT
-  if ((startY === 0 || startY === HEIGHT) && (startX < WIDTH / 15 || startX > WIDTH / 15 * 14)) {
-    calculatePoint()
-  }
-  if ((startX === 0 || startX === WIDTH) && (startY < HEIGHT / 15 || startY > HEIGHT / 15 * 14)) {
-    calculatePoint()
-  }
+  startY = (startX === 0||startX===WIDTH) ? HEIGHT * Math.random() : Math.random() < 0.5 ? 0 : HEIGHT
+  console.log(startX, startY);
+  // if ((startY === 0 || startY === HEIGHT) && (startX < WIDTH / 15 || startX > WIDTH / 15 * 14)) {
+  //   calculatePoint()
+  // }
+  // if ((startX === 0 || startX === WIDTH) && (startY < HEIGHT / 15 || startY > HEIGHT / 15 * 14)) {
+  //   calculatePoint()
+  // }
 }
 
 function init() {
